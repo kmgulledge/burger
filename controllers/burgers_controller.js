@@ -12,7 +12,7 @@ router.get('/burger', function(req, res) {
     burgers.all(function(data) {
         var hbsObject = { burger: data };
 
-        console.log(hbsObject);
+        //console.log(hbsObject);
 
         res.render('index', hbsObject);
     });
@@ -24,12 +24,12 @@ router.post('/burger/create', function(req, res) {
     });
 });
 
-router.put('/burgers/update/:id', function(req, res) {
+router.put('/burger/update/:id', function(req, res) {
     var condition = 'id = ' + req.params.id;
 
     console.log('condition ', condition);
 
-    burgers.update({ 'devoured': req.body.devoured }, condition, function(data) {
+    burgers.update({ 'devoured': true }, condition, function(data) {
         res.redirect('/burger');
     });
 });
