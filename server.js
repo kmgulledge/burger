@@ -7,6 +7,7 @@ var bodyParser = require("body-parser")
 
 // App variable
 var app = express();
+var port = 3000;
 
 //Server static content the public directory
 app.use(express.static(process.cwd() + '/public'));
